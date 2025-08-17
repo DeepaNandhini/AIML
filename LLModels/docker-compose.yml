@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ollama-container:
+    image: ollama/ollama
+    container_name: ollama-container
+    ports:
+      - "11435:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+  streamlit-app:
+    image: chatbotapp
+    ports:
+      - "8501:8501"
+
+volumes:
+  ollama_data:
